@@ -1,0 +1,21 @@
+{
+  "name": "best-alu",
+  "version": "1.0.0",
+  "description": "site vitrine Best-Alu ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mahouachi Ahmed",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "config": "^3.3.9",
+    "dotenv": "^16.1.4",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.2"
+  }
+}
