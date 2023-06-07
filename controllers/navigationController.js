@@ -1,5 +1,5 @@
 
-
+const Project = require("../models/projectModel.js");
 
 
    exports.explore = async (req, res) => {
@@ -15,5 +15,13 @@
   };
 
    exports.trending = async (req, res) => {
-    res.render('trending');
+
+    try {
+      const UserMessages = await Project.find();
+      const itemObjects = UserMessages.map(item => item.toObject());
+      res.render('trending',{itemObjects})
+    } catch (error) {
+      res.status(404);
+    }
+
   };

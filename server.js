@@ -3,6 +3,7 @@ const app = express();
 const path = require('path');
 const connectDB = require("./config/dbConnect");
 const contactRoutes = require("./routes/contactRoutes");
+const projectRoutes = require("./routes/projectRoutes");
 const navigationRoutes = require("./routes/navigationRoutes");
 const bodyParser = require("body-parser");
 
@@ -20,6 +21,7 @@ connectDB();
 
 
 app.use("/contact", contactRoutes);
+app.use("/project", projectRoutes);
 app.use("/", navigationRoutes);
 
 app.get('/', (req, res) => {

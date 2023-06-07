@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/owl.css">
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 <!--
 
 TemplateMo 572 Designer
@@ -117,34 +118,33 @@ https://templatemo.com/tm-572-designer
             <div class="col-lg-12">
                 <div class="contact-page-form">
                     <div class="row">
-                        <div class="col-lg-6 align-self-center">
-                            <form id="contact" action="" method="post">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="section-heading">
-                                            <h2>Don't be Hesitated<br><em>Send a message now</em>!</h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">                 
-                                        <input name="first-name" type="text" id="first-name" placeholder="First Name*" required="">               
-                                    </div>
-                                    <div class="col-lg-6">                
-                                        <input name="last-name" type="text" id="last-name" placeholder="Last Name*" required="">                           
-                                    </div>
-                                    <div class="col-lg-6">                       
-                                        <input name="email" type="text" id="email" pattern="[^ @]*@[^ @]*" placeholder="Your Email" required="">                        
-                                    </div>
-                                    <div class="col-lg-6">                         
-                                        <input name="subject" type="text" id="subject" placeholder="Subject*" required="">                        
-                                    </div>
-                                    <div class="col-lg-12">                           
-                                        <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>                          
-                                    </div>
-                                    <div class="col-lg-12">
-                                        <button type="submit" id="form-submit" class="main-button ">Send Message</button>                            
+                        <div class="col-lg-6 align-self-center"><form id="contact">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="section-heading">
+                                        <h2>Don't be Hesitated<br><em>Talk to us</em> now!</h2>
                                     </div>
                                 </div>
-                            </form>
+                                <div class="col-lg-6">                 
+                                    <input name="name" type="text" id="name" placeholder="Name*" required="">               
+                                </div>
+                                <div class="col-lg-6">                
+                                    <input name="email" type="email" id="email" placeholder="Email*" required="">                           
+                                </div>
+                                <div class="col-lg-6">                       
+                                    <input name="number" type="text" id="number" placeholder="Your Phone Number" required="">                        
+                                </div>
+                                <div class="col-lg-6">                         
+                                    <input name="subject" type="text" id="subject" placeholder="Subject*" required="">                        
+                                </div>
+                                <div class="col-lg-12">                           
+                                    <textarea name="message" type="text" class="form-control" id="message" placeholder="Message" required=""></textarea>                          
+                                </div>
+                                <div class="col-lg-12">
+                                    <button type="submit" id="form-submit" class="main-button ">Send Message</button>                            
+                                </div>
+                            </div>
+                        </form>
                         </div>
                         <div class="col-lg-6">
                             <div class="right-info">
@@ -180,11 +180,7 @@ https://templatemo.com/tm-572-designer
                 <div class="col-lg-8">
                     <h2>Hire us to Work on a Project?</h2>
                 </div>
-                <div class="col-lg-4">
-                    <div class="white-button">
-                        <a href="">Contact Us Now</a>
-                    </div>
-                </div>
+               
             </div>
         </div>
     </section>
@@ -288,6 +284,7 @@ https://templatemo.com/tm-572-designer
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -297,6 +294,8 @@ https://templatemo.com/tm-572-designer
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+  
+  <script src="assets/js/contactForm.js"></script>
   <script>
     setTimeout(function(){
         $('.loader').fadeToggle();

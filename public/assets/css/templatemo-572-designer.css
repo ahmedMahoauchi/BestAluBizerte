@@ -1440,6 +1440,8 @@ section.trending-page .trending-item .thumb .hover-effect .inner-content a.icon 
 }
 
 section.trending-page .trending-item .thumb img {
+  height: 300px;
+  width: 280px;
   border-radius: 7.5px;
   -webkit-transition: all 1s;
   transition: all 1s;

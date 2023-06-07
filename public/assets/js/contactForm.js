@@ -1,6 +1,4 @@
-
-var form = document.getElementById("contact");
-    
+ 
 $(document).ready(function() {
     $('#contact').submit(function(event) {
       event.preventDefault(); // Empêche le comportement par défaut du formulaire (actualisation de la page)
@@ -29,7 +27,7 @@ $(document).ready(function() {
   
           Toastify({
             text: "Votre message a été envoyé.",
-            duration: 5000,
+            duration: 10000,
             destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
             close: true,
@@ -41,9 +39,16 @@ $(document).ready(function() {
             },
             onClick: function(){} // Callback after click
           }).showToast();
-          console.log('aaaaaa');
+          
+           // Clear the form fields
+            $('#name').val('');
+            $('#email').val('');
+            $('#number').val('');
+            $('#subject').val('');
+            $('#message').val('');
+
           // Effectuez d'autres traitements spécifiques en cas de succès
-          // ...
+          
         },
         error: function(xhr, status, error) {
           // Fonction exécutée en cas d'erreur lors de la requête
