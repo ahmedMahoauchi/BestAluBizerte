@@ -1,4 +1,4 @@
- 
+
 $(document).ready(function() {
     $('#contact').submit(function(event) {
       event.preventDefault(); // Empêche le comportement par défaut du formulaire (actualisation de la page)
@@ -24,11 +24,15 @@ $(document).ready(function() {
           // Fonction exécutée lorsque la requête est réussie (statut 200 OK)
           // Mettez à jour le contenu de la page avec la réponse
           $('#response').text(JSON.stringify(response));
+
+
+          // Emit the formData using Socket.IO
+          socket.emit('chatmessage', formData);
+  
   
           Toastify({
             text: "Votre message a été envoyé.",
             duration: 10000,
-            destination: "https://github.com/apvarun/toastify-js",
             newWindow: true,
             close: true,
             gravity: "top", // `top` or `bottom`

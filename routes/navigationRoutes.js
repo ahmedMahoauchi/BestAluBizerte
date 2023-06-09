@@ -1,5 +1,6 @@
 const express = require("express");
 const {
+    index,
     explore,
     contact,
     about,
@@ -16,5 +17,6 @@ router.get("/explore", explore);
 router.get("/contact", contact);
 router.get("/about", about);
 router.get("/trending", trending);
+router.get("/", index);
 
 module.exports = router;

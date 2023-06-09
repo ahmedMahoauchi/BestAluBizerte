@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="assets/css/animate.css">
     <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    
 <!--
 
 TemplateMo 572 Designer
@@ -35,19 +36,19 @@ https://templatemo.com/tm-572-designer
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
        width="34px" height="40px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
       <rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
-        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.5s" repeatCount="indefinite" />
-        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.5s" repeatCount="indefinite" />
-        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.8s" repeatCount="indefinite" />
       </rect>
       <rect x="8" y="10" width="4" height="10" fill="#333"  opacity="0.2">
-        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.5s" repeatCount="indefinite" />
-        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.5s" repeatCount="indefinite" />
-        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.8s" repeatCount="indefinite" />
       </rect>
       <rect x="16" y="10" width="4" height="10" fill="#333"  opacity="0.2">
-        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.5s" repeatCount="indefinite" />
-        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.5s" repeatCount="indefinite" />
-        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.8s" repeatCount="indefinite" />
+        <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.8s" repeatCount="indefinite" />
       </rect>
     </svg>
   </div>
@@ -199,23 +200,34 @@ https://templatemo.com/tm-572-designer
                   <div class="left-content">
                       <p>Lorem Ipsum dolor sit amet, consectetur adipsicing kengan omeg kohm tokito adipcingi elit, sed do eismuod larehai med at vero eos et suscipit neque rerum molestias accusamus et iusto odio dignissimos ducimus qui blanditis.</p>
                       <div class="primary-button">
-                          <a href="#">Discover More</a>
+                          <a href="/trending">Discover More</a>
                       </div>
                   </div>
               </div>
-              <div class="col-lg-4">
-                  <div class="right-image">
-                      <div class="thumb">
-                          <div class="hover-effect">
-                              <div class="inner-content">
-                                  <h4><a href="#">Modernized Interior</a></h4>
-                                  <span>Guest Room Decoration</span>
-                              </div>
-                          </div>
-                          <img src="assets/images/whats-trending-item-image.jpg" alt="">
-                      </div>
-                  </div>
-              </div>
+
+              <% itemObjects.forEach(function(item) { %>
+                <div class="col-lg-2">
+                    <div class="right-image">
+                        <div class="thumb">
+                            <div class="hover-effect">
+                                <div class="inner-content">
+                                    <h4><a href="#"><%= item.name %></a></h4>
+                                    <span><%= item.description %></span>
+                                </div>
+                            </div>
+                            <img src="uploads/<%= item.image %>" alt="">
+                        </div>
+                    </div>
+                </div>
+               
+               
+              <% }); %>
+
+              
+              
+
+           
+             
           </div>
       </div>
   </section>
@@ -374,6 +386,24 @@ https://templatemo.com/tm-572-designer
   <script src="assets/js/tabs.js"></script>
   <script src="assets/js/popup.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script>
+    // Establish a connection to the Socket.IO server
+    var socket = io('http://localhost:3000'); // Replace with your server URL
+  
+    // Add event listeners or perform other actions on the socket connection
+    socket.on('connect', function() {
+      console.log('Connected to Socket.IO server');
+      // Add any other logic you need when the connection is established
+    });
+  
+    // Handle any socket events or messages received from the server
+    socket.on('someEvent', function(data) {
+      console.log('Received data from server:', data);
+      // Handle the received data as needed
+    });
+    
+  </script>
   <script src="assets/js/contactForm.js"></script>
   <script>
     setTimeout(function(){

@@ -514,6 +514,7 @@ section.whats-trending .left-content p {
 }
 
 section.whats-trending .right-image {
+ 
   position: relative;
   display: none;
 }
@@ -597,20 +598,12 @@ section.whats-trending .right-image .thumb:hover .hover-effect .inner-content sp
 }
 
 section.whats-trending .right-image .thumb img {
+  height: 300px;
+  width: 200px;
   border-radius: 7.5px;
 }
 
-section.whats-trending .right-image::after {
-  width: 440px;
-  height: 300px;
-  right: -440px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  position: absolute;
-  background: url(../images/whats-trending-right-image.png);
-  content: '';
-}
+
 
 section.contact-us {
   margin-top: 60px;
