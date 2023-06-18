@@ -28,3 +28,18 @@ exports.createProject = async (req, res) => {
       res.status(404).json({ message: error.message });
     }
   };
+
+  exports.getProjectById = async (req, res) => {
+    const projectId = req.params.id; // Assuming the project ID is passed as a parameter in the route
+  
+    try {
+      const project = await Project.findById(projectId);
+      if (!project) {
+        return res.status(404).json({ message: 'Project not found' });
+      }
+  
+      res.status(200).json(project);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };

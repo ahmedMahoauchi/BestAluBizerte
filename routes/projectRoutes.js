@@ -1,7 +1,8 @@
 const express = require("express");
 const {
     createProject,
-    getProjects
+    getProjects,
+    getProjectById
 } = require("../controllers/projectController");
 
 const router = express.Router();
@@ -12,5 +13,6 @@ const uploader = require("../middlewares/multer-config");
 //router.delete("/:productId", DeleteProduct);
 router.post("/createProject",uploader.single("image"), createProject);
 router.get("/getProject", getProjects);
+router.get("/getProjectById/:id", getProjectById);
 
 module.exports = router;
