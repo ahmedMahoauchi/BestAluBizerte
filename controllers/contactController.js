@@ -19,3 +19,14 @@ exports.createContact = async (req, res) => {
       res.status(500).json({ errors: error });
     }
   };
+
+  exports.getAllContact = async (req, res) => {
+  
+    try {
+      const contacts = await Contact.find();
+      
+      res.status(200).json(contacts);
+    } catch (error) {
+      res.status(404).json({ message: error.message });
+    }
+  };

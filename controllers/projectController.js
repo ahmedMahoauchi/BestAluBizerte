@@ -22,7 +22,7 @@ exports.createProject = async (req, res) => {
    
     try {
       const UserMessages = await Project.find();
-      console.log(UserMessages);
+      
       res.status(200).json(UserMessages);
     } catch (error) {
       res.status(404).json({ message: error.message });
@@ -39,6 +39,22 @@ exports.createProject = async (req, res) => {
       }
   
       res.status(200).json(project);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
+
+  exports.deleteProjectById = async (req, res) => {
+    const projectId = req.params.id; // Assuming the ID is passed as a URL parameter
+  
+    try {
+      const deletedProject = await Project.findByIdAndDelete(projectId);
+  
+      if (!deletedProject) {
+        return res.status(404).json({ message: 'Project not found.' });
+      }
+  
+      res.status(200).json({ message: 'Project deleted successfully.' });
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
