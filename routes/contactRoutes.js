@@ -1,7 +1,8 @@
 const express = require("express");
 const {
     createContact,
-    getAllContact
+    getAllContact,
+    getContactById
 } = require("../controllers/contactController");
 
 const router = express.Router();
@@ -12,4 +13,5 @@ const router = express.Router();
 //router.delete("/:productId", DeleteProduct);
 router.post("/createContact", createContact);
 router.get("/getAllContacts", getAllContact);
+router.get("/getContactById/:id", getContactById);
 module.exports = router;
