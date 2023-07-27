@@ -30,3 +30,20 @@ exports.createContact = async (req, res) => {
       res.status(404).json({ message: error.message });
     }
   };
+
+
+
+  exports.getContactById = async (req, res) => {
+    const contactId = req.params.id; // Assuming the project ID is passed as a parameter in the route
+  
+    try {
+      const contact = await Contact.findById(contactId);
+      if (!contact) {
+        return res.status(404).json({ message: 'contact not found' });
+      }
+  
+      res.status(200).json(contact);
+    } catch (error) {
+      res.status(500).json({ message: error.message });
+    }
+  };
